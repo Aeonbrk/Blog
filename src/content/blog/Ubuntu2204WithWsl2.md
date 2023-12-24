@@ -32,14 +32,14 @@ D:\ ❯ wsl --export Ubuntu-22.04 H:\wsl\Ubuntu2204.tar
 Export in progress, this may take a few minutes...
 ```
 
-- you should explicitly choose give the backup a name, like
+- you should explicitly give the backup a name
 
 ## apt source
 
-1. 配置默认用户
+1. configure default user
    `ubuntu2204 config --default-user  haibin`
 
-2. 更改源
+2. change default apt source
    `sudo vim /etc/apt/sources.list`
 
 **ubuntu 20.04 (focal) 配置如下**
@@ -100,8 +100,7 @@ deb http://security.ubuntu.com/ubuntu/ jammy-security multiverse
 ## proxy set
 
 ```shell
-## vim proxy.sh
-##!/bin/sh
+#!/bin/sh
 hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
 wslip=$(hostname -I | awk '{print $1}')
 port=7890
@@ -164,7 +163,7 @@ fi
 `in ~/. bashrc or ~/. zshrc`
 
 ```shell
-## alias
+# alias
 alias r='ranger'
 alias v='lvim'
 alias vi='lvim'
@@ -176,14 +175,14 @@ alias clean='sudo bleachbit'
 alias pdf='evince'
 alias u='sudo apt update && sudo apt upgrade'
 
-## proxy
+# proxy
 proxy set
 ```
 
 ## git
 
-[Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows)
-[Adding a new SSH key to your GitHub account - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+- [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows)
+- [Adding a new SSH key to your GitHub account - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 ## nvim
 
@@ -213,7 +212,7 @@ sudo make install -j8
 
 [Installation | LunarVim](https://www.lunarvim.org/docs/installation)
 
-还有 npm node 和 cargo
+- Optinal: node and Rust
 
 ```shell
 sudo apt update && sudo apt install git make python3-pip
@@ -413,11 +412,11 @@ It will download a script, and start the installation. If everything goes well, 
 
 ## The missing semester
 
-[编辑器 (Vim) · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/editors/)
-[命令行环境 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/command-line/)
-[调试及性能分析 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/debugging-profiling/)
-[安全和密码学 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/security/)
-[大杂烩 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/potpourri/)
+- [Vim · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/editors/)
+- [Command-Line · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/command-line/)
+- [Debugging-Profiling · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/debugging-profiling/)
+- [Security · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/security/)
+- [Potpourri · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/potpourri/)
 
 ## teminalizer
 
@@ -427,7 +426,7 @@ It will download a script, and start the installation. If everything goes well, 
 
 ![Alt text](https://github.com/faressoft/terminalizer/raw/master/img/demo.gif?raw=true "optional title")
 
-## 大杂烩
+## Potpourri
 
 [[Modern Unix]]
 [Install Google Chrome on Ubuntu 22.04/20.04 From Command Line (linuxbabe.com)](https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-20-04)
@@ -450,16 +449,16 @@ pip3 install thefuck --user
 
 [bat/README-zh.md at master · sharkdp/bat · GitHub](https://github.com/sharkdp/bat/blob/master/doc/README-zh.md)
 
-#### Ubuntu (使用 apt)
+#### Ubuntu (use apt)
 
-`bat` 要求的版本： [Ubuntu 高于 20.04 ("Focal")](https://packages.ubuntu.com/search?keywords=bat&exact=1) 和 [Debian 高于 August 2021 (Debian 11 - "Bullseye")](https://packages.debian.org/bullseye/bat).
-当你的发行版满足条件那么直接在终端运执行：
+`bat` request version： [Ubuntu after 20.04 ("Focal")](https://packages.ubuntu.com/search?keywords=bat&exact=1) 和 [Debian after August 2021 (Debian 11 - "Bullseye")](https://packages.debian.org/bullseye/bat).
+if your distribution is satisfy the requests：
 
 ```shell
 sudo apt install bat
 ```
 
-重要：如果你通过这种方法安装 `bat`，请留意你所安装的可执行文件是否为 `batcat`（由 [其他包的可执行文件名冲突](https://github.com/sharkdp/bat/issues/982) 造成）。你可以创建一个 `bat -> batcat` 的符号链接 (symlink) 或别名来避免因为可执行文件不同带来的问题并与其他发行版保持一致性。
+Important: if you are in this way to install `bat`, please pay attention to whether or not you have installed executables for `batcat` (by [other bundles executable file name conflict caused](https://github.com/sharkdp/bat/issues/982)) . You can create a 'bat -> batcat' symlink or alias to avoid problems due to different executables and maintain consistency with other distributions.
 
 ```shell
 mkdir -p ~/.local/bin
@@ -468,7 +467,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 
 #### Ubuntu (使用 .deb 包)
 
-如果你无法使用上一种方法安装，或需要用最新版的 `bat`，你可以从 [release 页面](https://github.com/sharkdp/bat/releases) 下载最新的 `.deb` 包并通过下述方法安装：
+If you cannot install using the previous method, or need the latest version of bat, you can download the latest.deb package from [release page](https://github.com/sharkdp/bat/releases) and install it as follows:
 
 ```shell
 wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-musl_0.23.0_amd64.deb
@@ -510,7 +509,7 @@ sudo apt install ccache
 which gcc
 ```
 
-它默认会输出 `/usr/bin/gcc`, 表示当你执行 `gcc` 命令时, 实际执行的是 `/usr/bin/gcc`. 作为一个 RTFM 的练习, 接下来你需要阅读 `man ccache` 中的内容, 并根据手册的说明, 在 `.zshrc` 文件中对某个环境变量进行正确的设置. 如果你的设置成功, 重新运行 `which gcc`, 你将会看到输出变成了 `/usr/lib/ccache/gcc`.
+By default, it outputs' /usr/bin/gcc ', meaning that when you execute the 'gcc' command, you are actually executing '/usr/bin/gcc'. As an exercise in RTFM, you will then need to read the contents of man ccache and set an environment variable correctly in the.zshrc file according to the manual instructions. If your setup is successful, rerun 'which gcc' and you will see the output changed to '/usr/lib/ccache/gcc'.
 
 ```shell
  There are two ways to use ccache. You can either prefix your compilation
