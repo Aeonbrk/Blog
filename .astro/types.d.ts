@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"NJUPTScripts.md": {
+	id: "NJUPTScripts.md";
+  slug: "njuptscripts";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "Ubuntu2204WithWsl2.md": {
 	id: "Ubuntu2204WithWsl2.md";
   slug: "ubuntu2204withwsl2";

@@ -1,7 +1,7 @@
 ---
 title: Ubuntu WSL2
 author: Haibin
-pubDatetime: 2023-12-24T13:50:00+08:00
+pubDatetime: 2023-12-24T13:50:00+8:00
 featured: false
 draft: false
 tags:
