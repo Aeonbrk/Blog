@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"Makefile.md": {
+	id: "Makefile.md";
+  slug: "makefile";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "NJUPTScripts.md": {
 	id: "NJUPTScripts.md";
   slug: "njuptscripts";

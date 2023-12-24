@@ -1,5 +1,5 @@
 ---
-title: NJUPT-automatic-evaluation-script
+title: NJUPT-Automatic-Evaluation-Script
 author: Haibin
 pubDatetime: 2023-12-24T17:50:00+8:00
 featured: false
@@ -7,7 +7,7 @@ draft: false
 tags:
   - School
 ogImage: ""
-description: A configuration for Ubuntu WSL2.
+description: Rescue you in the schhool`s evaluation at the end of each semester.
 ---
 
 ## NJUPT
