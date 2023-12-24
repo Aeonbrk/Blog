@@ -11,9 +11,11 @@ ogImage: ""
 description: A configuration for Ubuntu WSL2.
 ---
 
-# Problems
+## Table of contents
 
-## Access is denied
+## Problems
+
+### Access is denied
 
 ```shell
 D:\ ❯ wsl --shutdown
@@ -32,7 +34,7 @@ Export in progress, this may take a few minutes...
 
 - you should explicitly choose give the backup a name, like
 
-# apt source
+## apt source
 
 1. 配置默认用户
    `ubuntu2204 config --default-user  haibin`
@@ -52,8 +54,8 @@ deb-src https://mirrors.aliyun.com/ubuntu/ focal-security main restricted univer
 deb https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
 deb-src https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
 
-# deb https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
-# deb-src https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+## deb https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+## deb-src https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
 
 deb https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
 deb-src https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe
@@ -95,11 +97,11 @@ deb http://security.ubuntu.com/ubuntu/ jammy-security multiverse
 
 `sudo apt update && sudo apt upgrade`
 
-# proxy set
+## proxy set
 
 ```shell
-# vim proxy.sh
-#!/bin/sh
+## vim proxy.sh
+##!/bin/sh
 hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
 wslip=$(hostname -I | awk '{print $1}')
 port=7890
@@ -162,7 +164,7 @@ fi
 `in ~/. bashrc or ~/. zshrc`
 
 ```shell
-# alias
+## alias
 alias r='ranger'
 alias v='lvim'
 alias vi='lvim'
@@ -174,16 +176,16 @@ alias clean='sudo bleachbit'
 alias pdf='evince'
 alias u='sudo apt update && sudo apt upgrade'
 
-# proxy
+## proxy
 proxy set
 ```
 
-# git
+## git
 
 [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows)
 [Adding a new SSH key to your GitHub account - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-# nvim
+## nvim
 
 ```shell
 sudo apt-get install ninja-build gettext cmake unzip curl build-essential
@@ -207,7 +209,7 @@ sudo make install -j8
 > export PATH="$HOME/neovim/bin:$PATH"
 > ```
 
-## Lunarvim
+### Lunarvim
 
 [Installation | LunarVim](https://www.lunarvim.org/docs/installation)
 
@@ -236,7 +238,7 @@ cd lua && mkdir user
 cd ~\.config\lvim\ftplugin
 ```
 
-# oh my zsh
+## oh my zsh
 
 > 1. [Install the recommended font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k). *Optional but highly recommended.*
 > 2. [Install Powerlevel10k](https://github.com/romkatv/powerlevel10k#installation) itself.
@@ -257,7 +259,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## powerlevel 10 k theme
+### powerlevel 10 k theme
 
 [romkatv/powerlevel10k: A Zsh theme (github.com)](https://github.com/romkatv/powerlevel10k)
 
@@ -266,7 +268,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ZSH_THEME="powerlevel10k/powerlevel10k"   # in ~/.zshrc
 ```
 
-## plugins
+### plugins
 
 ```shell
 # zsh-autosuggestions
@@ -279,14 +281,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
-# fzf
+## fzf
 
 ```shell
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-## Key bindings for command-line
+### Key bindings for command-line
 
 The install script will setup the following key bindings for bash, zsh, and fish.
 
@@ -332,7 +334,7 @@ If you're on a tmux session, you can start fzf in a tmux split-pane or in a tmux
 
 More tips can be found on [the wiki page](https://github.com/junegunn/fzf/wiki/Configuring-shell-key-bindings).
 
-## fzf-tab
+### fzf-tab
 
 [Aloxaf/fzf-tab: Replace zsh's default completion selection menu with fzf! (github.com)](https://github.com/Aloxaf/fzf-tab)
 
@@ -342,7 +344,7 @@ Clone this repository to your custom directory and then add `fzf-tab` to your 
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 ```
 
-# node/npm/nvm
+## node/npm/nvm
 
 To **install** or **update** nvm, you should run the [install script](https://github.com/nvm-sh/nvm/blob/v0.39.3/install.sh). To do that, you may either download and run the script manually, or use the following cURL or Wget command:
 
@@ -385,7 +387,7 @@ v18.16.0
 9.5.1
 ```
 
-# Rust/cargo
+## Rust/cargo
 
 [Installation - The Cargo Book (rust-lang.org)](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
@@ -399,17 +401,17 @@ It will download a script, and start the installation. If everything goes well, 
 
 `Rust is installed now. Great!`
 
-# Tmux
+## Tmux
 
 [A Quick and Easy Guide to tmux (hamvocke.com)](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)
 [Linux Command Line Adventure: Terminal Multiplexers](http://linuxcommand.org/lc3_adv_termmux.php)
 
-# dotfiles
+## dotfiles
 
 [GitHub does dotfiles - dotfiles.github.io](https://dotfiles.github.io/)
 [mathiasbynens/dotfiles: .files, including ~/.macos — sensible hacker defaults for macOS (github.com)](https://github.com/mathiasbynens/dotfiles)
 
-# The missing semester
+## The missing semester
 
 [编辑器 (Vim) · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/editors/)
 [命令行环境 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/command-line/)
@@ -417,7 +419,7 @@ It will download a script, and start the installation. If everything goes well, 
 [安全和密码学 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/security/)
 [大杂烩 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/2020/potpourri/)
 
-# teminalizer
+## teminalizer
 
 > [faressoft/terminalizer: 🦄 Record your terminal and generate animated gif images or share a web player (github.com)](https://github.com/faressoft/terminalizer)
 >
@@ -425,12 +427,12 @@ It will download a script, and start the installation. If everything goes well, 
 
 ![Alt text](https://github.com/faressoft/terminalizer/raw/master/img/demo.gif?raw=true "optional title")
 
-# 大杂烩
+## 大杂烩
 
 [[Modern Unix]]
 [Install Google Chrome on Ubuntu 22.04/20.04 From Command Line (linuxbabe.com)](https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-20-04)
 
-## thefuck
+### thefuck
 
 [nvbn/thefuck: Magnificent app which corrects your previous console command. (github.com)](https://github.com/nvbn/thefuck)
 
@@ -444,11 +446,11 @@ sudo apt install python3-dev python3-pip python3-setuptools
 pip3 install thefuck --user
 ```
 
-## bat
+### bat
 
 [bat/README-zh.md at master · sharkdp/bat · GitHub](https://github.com/sharkdp/bat/blob/master/doc/README-zh.md)
 
-### Ubuntu (使用 apt)
+#### Ubuntu (使用 apt)
 
 `bat` 要求的版本： [Ubuntu 高于 20.04 ("Focal")](https://packages.ubuntu.com/search?keywords=bat&exact=1) 和 [Debian 高于 August 2021 (Debian 11 - "Bullseye")](https://packages.debian.org/bullseye/bat).
 当你的发行版满足条件那么直接在终端运执行：
@@ -464,7 +466,7 @@ mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
 
-### Ubuntu (使用 .deb 包)
+#### Ubuntu (使用 .deb 包)
 
 如果你无法使用上一种方法安装，或需要用最新版的 `bat`，你可以从 [release 页面](https://github.com/sharkdp/bat/releases) 下载最新的 `.deb` 包并通过下述方法安装：
 
@@ -473,11 +475,11 @@ wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-musl_0.23.0_am
 sudo dpkg -i bat-musl_0.23.0_amd64.deb  # adapt version number and architecture
 ```
 
-## fd
+### fd
 
 > `fd` is a program to find entries in your filesystem. It is a simple, fast and user-friendly alternative to [`find`](https://www.gnu.org/software/findutils/). While it does not aim to support all of `find` 's powerful functionality, it provides sensible (opinionated) defaults for a majority of use cases.
 
-### On Ubuntu
+#### On Ubuntu
 
 If you run Ubuntu 19.04 (Disco Dingo) or newer, you can install the [officially maintained package](https://packages.ubuntu.com/fd-find)
 
@@ -496,7 +498,7 @@ sudo dpkg -i fd-musl_8.7.0_amd64.deb  # adapt version number and architecture
 
 [junegunn/fzf: A command-line fuzzy finder (github.com)](https://github.com/junegunn/fzf#tips)
 
-## ccache
+### ccache
 
 > Ccache is a compiler cache. It [speeds up recompilation](https://ccache.dev/performance.html) by caching previous compilations and detecting when the same compilation is being done again.
 > [ccache/ccache: ccache – a fast compiler cache (github.com)](https://github.com/ccache/ccache)
@@ -543,7 +545,7 @@ source ~/.zshrc
 which gcc
 ```
 
-## btop
+### btop
 
 > [aristocratos/btop: A monitor of resources (github.com)](https://github.com/aristocratos/btop)
 > Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
@@ -589,7 +591,7 @@ For a `cmake` based build alternative see the [fork](https://github.com/jan-g
    sudo make install
    ```
 
-## zoxide
+### zoxide
 
 > [ajeetdsouza/zoxide: A smarter cd command. Supports all major shells. (github.com)](https://github.com/ajeetdsouza/zoxide)
 > zoxide is a **smarter cd command**, inspired by z and autojump. It remembers which directories you use most frequently, so you can "jump" to them in just a few keystrokes. zoxide works on all major shells.
@@ -614,7 +616,7 @@ eval "$(zoxide init zsh)"
 
 For completions to work, the above line must be added *after* `compinit` is called. You may have to rebuild your completions cache by running `rm ~/.zcompdump*; compinit`.
 
-## typos
+### typos
 
 > [crate-ci/typos: Source code spell checker (github.com)](https://github.com/crate-ci/typos)
 > Finds and corrects spelling mistakes among source code:
@@ -622,7 +624,7 @@ For completions to work, the above line must be added *after* `compinit` is c
 > - Fast enough to run on monorepos
 > - Low false positives so you can run on PRs
 
-## tldr
+### tldr
 
 > [tldr-pages/tldr: 📚 Collaborative cheatsheets for console commands (github.com)](https://github.com/tldr-pages/tldr)
 > The **tldr-pages** project is a collection of community-maintained help pages for command-line tools, that aims to be a simpler, more approachable complement to traditional [man pages](https://en.wikipedia.org/wiki/Man_page).
@@ -633,7 +635,7 @@ A popular and convenient way to access these pages on your computer is to instal
 npm install -g tldr
 ```
 
-## gping
+### gping
 
 Ping, but with a graph.
 
@@ -653,7 +655,7 @@ sudo apt install gping
 gping --help
 ```
 
-## ranger
+### ranger
 
 ```shell
 ❯ ranger --copy-config=all
@@ -670,7 +672,7 @@ creating: /home/haibin/.config/ranger/scope.sh
   please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.
 ```
 
-## cht.sh
+### cht.sh
 
 [chubin/cheat.sh: the only cheat sheet you need (github.com)](https://github.com/chubin/cheat.sh)
 
@@ -695,7 +697,7 @@ curl https://cht.sh/:cht.sh > "$PATH_DIR/cht.sh"
 chmod +x "$PATH_DIR/cht.sh"
 ```
 
-## gdu
+### gdu
 
 Pretty fast disk usage analyzer written in Go.
 
@@ -707,7 +709,7 @@ sudo apt-get update
 sudo apt-get install gdu
 ```
 
-## fkill-cli
+### fkill-cli
 
 [sindresorhus/fkill-cli: Fabulously kill processes. Cross-platform. (github.com)](https://github.com/sindresorhus/fkill-cli)
 
@@ -744,7 +746,7 @@ Supports fuzzy search in the interactive mode.
 The process name is case insensitive.
 ```
 
-## gdb-dashboard
+### gdb-dashboard
 
 [cyrus-and/gdb-dashboard: Modular visual interface for GDB in Python (github.com)](https://github.com/cyrus-and/gdb-dashboard)
 
@@ -756,7 +758,7 @@ The process name is case insensitive.
 wget -P ~ https://git.io/.gdbinit
 ```
 
-## gcalcli
+### gcalcli
 
 > gcalcli is a Python application that allows you to access your Google Calendar(s) from a command line. It's easy to get your agenda, search for events, add new events, delete events, edit events, see recently updated events, and even import those annoying ICS/vCal invites from Microsoft Exchange and/or other sources. Additionally, gcalcli can be used as a reminder service and execute any application you want when an event is coming up.
 
@@ -764,7 +766,7 @@ wget -P ~ https://git.io/.gdbinit
 sudo apt install gcalcli
 ```
 
-## mapscii
+### mapscii
 
 [rastapasta/mapscii: 🗺 MapSCII is a Braille & ASCII world map renderer for your console - enter => telnet mapscii.me <= on Mac (brew install telnet) and Linux, connect with PuTTY on Windows (github.com)](https://github.com/rastapasta/mapscii)
 

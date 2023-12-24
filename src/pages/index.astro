@@ -23,7 +23,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1 class="mr-2">Hello!</h1>
+      <h1 class="mr-2">Hello!🥳</h1>
       <!-- <a
         target="_blank"
         href="/rss.xml"
@@ -43,20 +43,21 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         Here is my second brain, where I store various findings, creations, and
         other such items. I hope these can assist or inspire you in some way!
       </p>
-      <!-- <p>
-        Read the blog posts or check
+      <p>
+        The website's theme is inspired by this source, with gratitude to the
+        author! 💕 Also, be sure to explore the astro link:
         <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://github.com/satnaing/astro-paper#readme"
+          href="https://astro.build/themes/details/astro-paper/"
         >
-          README
+          astro-paper
         </LinkButton> for more info.
-      </p> -->
+      </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
+            <div class="social-links">My Social Links:</div>
             <Socials />
           </div>
         )
